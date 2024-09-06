@@ -28,7 +28,7 @@ public class PlayerConfig {
 	
 	private OfflinePlayer player;
 	private UUID pid;
-	private Map<Integer, Mail> mail;
+	private Map<Integer, PlayerMail> mail;
 	private PlayerLog playerLog;
 	private List<OfflinePlayer> ignoreList;
 	private List<UUID> groups;
@@ -62,11 +62,11 @@ public class PlayerConfig {
 	 * @param config - Player Config
 	 * @return Map of Mail Data
 	 */
-	private Map<Integer, Mail> loadMail(YamlConfiguration config) {
-		Map<Integer, Mail> ret = new HashMap<Integer, Mail>();
+	private Map<Integer, PlayerMail> loadMail(YamlConfiguration config) {
+		Map<Integer, PlayerMail> ret = new HashMap<Integer, PlayerMail>();
 		
 		for(String mid : config.getConfigurationSection("mail").getKeys(false))
-			ret.put(Integer.parseInt(mid), Mail.loadFromConfig(Integer.parseInt(mid), config, "mail"));
+			ret.put(Integer.parseInt(mid), PlayerMail.loadFromConfig(Integer.parseInt(mid), config, "mail"));
 		
 		return ret;
 	}
@@ -135,7 +135,7 @@ public class PlayerConfig {
 	 * 
 	 * @return Map of player mail
 	 */
-	public Map<Integer, Mail> getMail() { return mail; }
+	public Map<Integer, PlayerMail> getMail() { return mail; }
 	
 	/**
 	 * Gets the specific Mail object based on it's ID.
@@ -143,7 +143,7 @@ public class PlayerConfig {
 	 * @param id - ID of mail object
 	 * @return Mail
 	 */
-	public Mail getMail(int id) { return mail.get(id); }
+	public PlayerMail getMail(int id) { return mail.get(id); }
 	
 	/**
 	 * Gets a Map of all mail that is unread by the player. If the player
@@ -151,10 +151,10 @@ public class PlayerConfig {
 	 * 
 	 * @return Map of Unread mail
 	 */
-	public Map<Integer, Mail> getUnreadMail() {
-		Map<Integer, Mail> ret = new HashMap<Integer, Mail>();
+	public Map<Integer, PlayerMail> getUnreadMail() {
+		Map<Integer, PlayerMail> ret = new HashMap<Integer, PlayerMail>();
 		
-		for(Map.Entry<Integer, Mail> entry : mail.entrySet()) {
+		for(Map.Entry<Integer, PlayerMail> entry : mail.entrySet()) {
 			if(entry.getValue().isUnread())
 				ret.put(entry.getKey(), entry.getValue());
 		}
@@ -370,7 +370,7 @@ public class PlayerConfig {
 		pConfig.set("chat.mute.by", Arrays.asList(muteData.getMuter() == null ? "Console" : muteData.getMuter().getUniqueId().toString(), muteData.getMuter() == null ? "Console" : muteData.getMuter().getName()));
 		pConfig.set("chat.mute.at", Arrays.asList("" + (muteData.getMuteTimeStamp() > 0 ? muteData.getMuteTimeStamp() : ""), muteData.getMuteTimeStamp() > 0 ? muteData.getMuteTimeStampString() : ""));
 		
-		for(Map.Entry<Integer, Mail> mailEntry : mail.entrySet()) {
+		for(Map.Entry<Integer, PlayerMail> mailEntry : mail.entrySet()) {
 			String path = "mail." + mailEntry.getKey() + ".";
 			
 			pConfig.set(path + "name", Arrays.asList(mailEntry.getValue().getSenderID().toString(), mailEntry.getValue().getSender().getName()));
