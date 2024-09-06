@@ -10,6 +10,7 @@
 # |admins|  . . . List of players that are admins within the group.
 # |members| . . . List of players that are members within the group.
 # |spies| . . . . List of players that are watching the group chat (but not apart of the group).
+# |banned|  . . . List of players that are banned from the group.
 #
 # |name|  . . . . Name of the group. This MUST be unique, no two groups can have the same name!
 # |max| . . . . . Max number of players allowed within the group.
@@ -22,6 +23,7 @@ owner: ''
 admins: []
 members: []
 spies: []
+banned: []
 options:
   name: ''
   max: 0
