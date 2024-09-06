@@ -1,0 +1,56 @@
+###############################
+###		  Player Data 		###
+###############################
+
+# NOTE: If you don't know what you're doing, LEAVE IT ALONE!!!!
+
+# Below are the different 'options' or data of a player. Note that while this data is editable, you'll need to
+# execute the command: '/chat admin load <player>'. This will force the cached data within the server to refresh
+# from this file rather than overriding. If you change this data and do not load the player data, then any changes
+# WILL BE LOST.
+#
+# [!] IMPORTANT [!]
+#
+# If you change any 'Mail' data, ensure to follow the format found below:
+# 'INT_VALUE':								--- INT (unique)
+#   name: [SENDER_UUID, SENDER_NAME]		--- String Array
+#   time: [LONG_VALUE, DATE_TIME_STRING]	--- String Array
+#   unread: TRUE/FALSE						--- Boolean
+#   message: 'MESSAGE'						--- String
+#
+# [!] IMPORTANT [!]
+#
+# |name| . . . . Name of the player for this config file. This is reference for the UUID of the file name.
+# |ignore| . . . List of players that THIS player is ignoring from chat.
+# |mute| . . . . This section shows if the player is muted along with other information data.
+# |mail| . . . . Contains a list of mail data. Shows who sent it, when, and if it has been read yet.
+# |warnings| . . List of warning data. Shows who warned the player, when and why.
+# |staff|  . . . List of mail sent via staff. Who, when and if unread.
+# |groups| . . . List of group ID's that the player is apart of. NOTE: This data is NOT changeable through this file. This is only for visual.
+#
+# The logger (for all types) is a simple String List of data that has specific values as splitters (delimiters) between the data
+# of the logged information. Depending on the type of logged information will depend on how the format is handled.
+# Logger Details:
+#  - "TIME_STAMP§DATE_TIME_STRING§VALUE"
+#
+# TIME_STAMP:			LONG_VALUE
+# DATE_TIME_STRING:		STRING
+# VALUE:				Value of logger
+
+name: ''
+
+warnings: []
+groups: []
+mail: []
+
+chat:
+  ignore: []
+  mute:
+    on: false
+    time: []
+    by: []
+    at: []
+  logger:
+    messages: []
+    commands: []
+    mail: []

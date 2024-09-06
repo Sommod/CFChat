@@ -1,0 +1,15 @@
+# This file contains a single list of words that are blacklisted and the filter
+# will (attempt) to catch. Due to how the filter works, it's suggested that the
+# whitelist also be used for false-positives.
+
+blacklist:
+  - ass
+  - tits
+  - fuck
+  - shit
+  - cunt
+  - dick
+  - pussy
+  - bitch
+  - cock
+  - nigger

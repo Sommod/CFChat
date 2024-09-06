@@ -1,0 +1,50 @@
+# This file is an alternative option for the blacklist filter. By default,
+# the blacklist will handle each word said by someone and determine to
+# the best of the algorithms ability if a word is blacklisted or not.
+#
+# This file is ONLY used if the secondary option for the filter is activated.
+# This filter works with selected words being available to be seen by everyone;
+# then, other words that are deemed more 'selective' are only seen by those who have
+# the permission to see said words (there is a command that can enable this option).
+# Finally, any words that are NOT within the these two categories are automatically
+# rejected. Note that rejected words effect everyone evenly, meaning even OPPED
+# players will have their sentence rejected. If someone does NOT have their option
+# turned on to see the selective words, then the ENTIRE sentence will be filtered.
+# The message will still be sent, but will be replaced with '######' for the entire
+# chat message.
+#
+# By default, a word collection is used for handling, the options below add configuration
+# to said words if you want to manually set them to the specified category. You can also
+# add words to these list if the word does not exist within the collection. If the word used
+# does not exist within the collection, it will automatically be set to REJECT.
+
+
+# NOTE:
+# You do not need to put every word into this file, several files already exist with a large
+# collection, this is only if the word does not exist (by some chance), or is mislabeled and
+# needs to be manually set.
+
+
+
+#
+# Public Words #
+#
+public:
+  - mojang
+  - minecraft
+  
+
+  
+#
+# Selective Words #
+#
+selective:
+  - balls
+  
+  
+  
+#
+# Reject Words #
+#
+reject:
+  - creampie

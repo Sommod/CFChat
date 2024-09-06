@@ -1,0 +1,102 @@
+name: CFChat
+version: 1.0
+main: coldfyre.cfchat.CFChat
+author: Sommod
+description: An overhaul of the Minecraft Chat system
+api-version: 1.20
+depend: CFCore
+
+commands:
+  cfchat:
+    usage: /cfchat help [command] for list of commands
+    description: Command for handling the chat system
+    aliases: [chat, c, cfc]
+  cfgroup:
+    usage:  /cfgroup help [command] for list of commands
+    description: Create and manage group chats
+    permission: cfgroup.use
+    aliases: [group, g, cfg]
+  cfstaff:
+    usage: /cfstaff [message]
+    description: A chat system for staff members
+    permission: cfstaff.use
+    aliases: [staff, s, cfs, staffchat, cfstaffchat]
+  cfwarn:
+    usage: /cfwarn help [command] for list of commands
+    description: A warning system that monitors the chat (when activated in config)
+    permission: cfwarn.use
+    aliases: [warn, w, cfw]
+    
+permissions:
+  cfchat.*:
+    default: op
+    description: Permission to access everything
+    children:
+      cfchat.chat.*: true
+      cfchat.group.*: true
+      cfchat.warn.*: true
+      cfchat.staff.use: true
+      cfchat.staff.format: true
+  cfchat.chat.*:
+    description: Grants access to all chat permissions
+    children:
+      cfchat.reload: true
+      cfchat.ignore: true
+      cfchat.ignore.server: true
+      cfchat.exempt: true
+      cfchat.force: true
+      cfchat.message: true
+      cfchat.mail: true
+      cfchat.mailall: true
+      cfchat.log.mail: true
+      cfchat.log.message: true
+      cfchat.log.clear: true
+      cfchat.clear: true
+      cfchat.clear.server: true
+      cfchat.clear.other: true
+      cfchat.clear.exempt: true
+      cfchat.spamexempt: true
+      cfchat.lock: true
+      cfchat.unlock: true
+      cfchat.mute: true
+      cfchat.unmute: true
+      cfchat.spy: true
+      cfchat.itemdisplay: true
+      cfchat.blacklist.*: true
+  cfchat.blacklist.*:
+    description: Access to all Blacklist commands
+    children:
+      cfchat.blacklist.add: true
+      cfchat.blacklist.remove: true
+      cfchat.blacklist.option: true
+      cfchat.blacklist.filter: true
+      cfchat.blacklist.exempt: true
+  cfgroup.*:
+    default: op
+    description: Grants access to all Group commands.
+    children:
+      cfgroup.use: true
+      cfgroup.delete: true
+      cfgroup.takeover: true
+      cfgroup.config: true
+      cfgroup.hide: true
+      cfgroup.unhide: true
+      cfgroup.option: true
+      cfgroup.runcom: true
+      cfgroup.message: true
+      cfgroup.mail: true
+      cfgroup.add: true
+      cfgroup.remove: true
+      cfgroup.log: true
+      cfgroup.join: true
+      cfgroup.spy: true
+  cfwarn.*:
+    default: op
+    description: Grants access to the warn system
+    children:
+      cfwarn.use: true
+      cfwarn.clear: true
+      cfwarn.exempt: true
+      cfwarn.log: true
+      cfwarn.log.clear: true
+    

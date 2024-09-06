@@ -1,0 +1,6 @@
+# This file is for recording plugin data. No editing should be
+# done here. While this file can be edited, if the plugin is active
+# then all edited data will be lost. To have any edited data take effect,
+# disable the plugin, edit this file and re-enable the plugin. This file
+# is only read ONCE during initialization. This file is simply an output
+# of different data based on timers and players.

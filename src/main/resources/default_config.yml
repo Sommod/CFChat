@@ -1,0 +1,301 @@
+############################
+####					####
+####	CFChat Config	####
+####					####
+############################
+
+# This config is split into four different sections based on the part of the
+# plugin that is being edited. CHAT, GROUP, STAFF, WARN are the four sections
+# that this plugin handles. By default, most of the filtering systems are
+# disabled as each server has their own policy / plugin for handling chat.
+# The Staffchat and Groups are enabled by default.
+
+#################
+## Chat system ##
+#################
+chat:
+
+  #
+  # Announcements #
+  #
+  announcements:
+  
+    # Determines if the announcement option of this plugin should be enabled.
+    enabled: false
+    
+    
+  #
+  # Item Displaying #
+  #
+  item:
+    
+    # Should the display of an item be enabled. Disable this if you have a different plugin
+    # to handle displaying items through the chat.
+    enabled: true
+    
+    # When an item is to be displayed in the chat, how should the format below be replaced.
+    # |NAME|    ==  This will replace the format below with the name of the item.
+    # |PLAYER|  ==  Display the Item Type with the players name (XXXXX's Item)
+    # |ITEM|    ==  Display just the text "Item"
+    # custom    ==  If you don't like any of these options, you can set it to your own custom text (i.e. "&cAwesome &6Item")
+    display: NAME
+  
+    # When sending a message through chat, there's a format option to display the item in ones'
+    # own hand. If the person has the permission to show items through chat, the format below
+    # is what to use to show the item. Note, it's suggested that this be unique so players don't
+    # randomly display items through the chat. If the player does not have permission, then the
+    # message will be sent normally; Additionally, if the player is not holding an item, then the
+    # keyword is removed from the message. Finally, the format must be EXACTLY the same as below
+    # for the item to be shown. This action works in all chats (Normal, Groups, Staff... etc).
+    showitem_keyword: "[i]"
+  
+  
+  #
+  # Blacklist #
+  #
+  blacklist:
+  
+    # Turn on / off the filter system
+    enabled: false
+    
+    # Should Groups be affected by the filter
+    group_filter: true
+    
+    # Should the Staffchat be affected by the filter
+    staff_filter: true
+    
+    # [!] IMPORTANT [!]
+    # This setting allows for an alternative blacklisting filter system to be used
+    # over the standard system. Information about the alternative system can be found
+    # within the file 'Alternative Filter'. If THIS option is enabled, then the 
+    # rest of the blacklist options are NOT used.
+    use_alternative_filter: false
+    
+    # 0 ~ 1. This determines the strength of the filter system. The LOWER the value, the more
+    # the filter will be strict and increase of false-positives. The higher the value, the less
+    # likely the filter will catch any blacklisted words. The filter finds words based on a percent
+    # chance that they are saying a blacklisted word rather than searching for the direct word itself.
+    # (Disabled IF alternative blacklist is used)
+    percent: 0.75
+    
+    # Determines when the a blacklisted word is found, how the word is handled in the chat.
+    # |WORD|  This will allow the message of the player to be sent, but the blacklisted word
+    # will be starred out ****
+    # |BLOCK|  This will prevent the message entirely. This action affects all forms of chat (staffchat, chat, group, etc...)
+    # (Disabled IF alternative blacklist is used)
+    type: WORD
+    
+    # When the blacklist filter is activated, should a response message be sent to the player
+    # (Disabled IF alternative blacklist is used)
+    respond: true
+    
+    # Message that will be sent to the player when the blacklist filter is activated
+    # (Disabled IF alternative blacklist is used)
+    message: "&cNaughty, Naughty... those words aren't allowed"
+    
+  
+  #
+  # Spam #
+  #
+  spam:
+  
+    # Should the spam filter be activated
+    enabled: false
+    
+    # Time interval (in seconds) that messages can be sent again.
+    message_interval: 2
+    
+    # If the player sends a message before the cooldown is over, should the
+    # spam timer reset
+    reset_timer: false
+    
+    # Message sent to the player when trying to message too quickly.
+    message: "&cSlow down! You're sending messages too quickly. Please wait %time% seconds before sending another message."
+    
+    
+  #
+  # Logger #
+  #
+  logger:
+    
+    # NOTE: Having this on may slow down you server with having more people. This
+    # will log chat details about the player. You can choose which options to log;
+    # the more people on the server, the more resources this will take. It's suggested
+    # to keep this off unless you have the resources to spare.
+    #
+    # The logger will keep a log (hence, logger) of the players chat. Three options are
+    # available to keep record of: Mail, Chat, and Commands. Each of these details wil
+    # be stored within the player config file.
+    enabled: false
+    
+    # Default: false
+    # Will log ALL messages that the player attempts to send through the chat, regardless of
+    # the plugin or chat system installed. The filter will NOT apply to the logger, as such
+    # the raw message of the player will be stored within their config file. Chat, StaffChat,
+    # Groups, etc. are all counted and logged.
+    log_messages: false
+    
+    # Default: true
+    # Logs all mail that the player sends. the filter will not apply to the logger, which
+    # means the raw message is stored.
+    log_mail: true
+    
+    # Default: false
+    # Logs any commands that the player issues.
+    log_commands: false
+    
+
+##################
+## Group System ##
+##################
+group:
+
+  # A sub-system for the normal chat. This allows players to create chat groups that
+  # they can invite players to talk without others seeing their messages.
+  enabled: true
+  
+  #
+  # Default Group Options #
+  #
+  options:
+  
+    # Determines if groups are public or private when created
+    public: false
+    
+    # Sets the maximum number of players that can join a single group.
+    # Note that admin commands overrule this option and can forcefully
+    # join a group. The maximum number of players able to join won't change
+    # the number of players within the group will account accordingly.
+    players:
+      
+      # Default group size. This value may NOT be less than the setting below (max_players)
+      # In the even this value is lower, then the max size for the groups is unlimited.
+      default: 20
+      
+      # Players can change their group limit in-game, this setting also acts
+      # the max number a group can set their max player count to. i.e. The group
+      # size can be lower than this limit, but may not exceed this limit. To max
+      # unlimited, put -1.
+      max_players: 99
+    
+    # Determines if a group can ignore the main chat. A player within a group will
+    # only ignore the main chat if their chat is set to the group.
+    ignore:
+      
+      # Default value during a creation of a group.
+      default: false
+      
+      # Determines if groups are allowed to edit the option to ignore the main chat.
+      allow_edit: true
+      
+    # This is the format of the group when someone sends a message.
+    # %dis% == Display Name of player
+    # %name% == Name of player
+    # %rank% == Rank of player
+    # %msg% == Player Message
+    # %group% == Group name
+    format: "&7[&6%group% | %rank%&7] &e%name% &r: %msg%"
+    
+    
+#################
+## Warn System ##
+#################
+warn:
+  
+  # Should the warning system be enabled
+  enabled: false
+  
+  # Should the auto-warning system be enabled. This will attempt to
+  # apply warnings to players based on the configuration of the
+  # blacklist and spamming system.
+  enable_auto: false
+  
+  #
+  # Warning Decay System #
+  #
+  decay:
+  
+    # If enabled, then the warnings that a player gets will eventually be removed automatically.
+    # Each time a new warning is given, then the timer resets. When removing warnings, the system
+    # will remove the oldest warning first.
+    enable: false
+    
+    # The amount of time it takes for a removal of a warning to take affect.
+    # The allowed times are (W)eeks, (D)ays, (H)ours, (M)inutes, (S)econds.
+    # Each different time should be separated by a space. (i.e. "1D 3W 15S 2H 9M")
+    # The order of the time does not matter, duplicate times will be added together.
+    time: 1D
+    
+    # This determines the number of warnings that are removed once a removal period occurs.
+    # The given numerical value determines the amount removed. If the amount to remove is greater
+    # the the number of warnings a player has, then all remaining warnings are removed. To remove
+    # all warnings regardless of how many, set the amount to -1.
+    amount: 1
+  
+  #
+  # Spam auto-warn section #
+  #
+  spam:
+  
+    # This number determines if the player should receive a warning
+    # after spamming in the chat too much. If a person spams the chat
+    # the amount of time below within the given period, then a warning
+    # will automatically be applied.
+    spam_limit: 5
+    
+    # This is the spam timer for a player. If the player reaches the
+    # limit within this time limit, then the warning is applied.
+    spam_timer: 300
+    
+    # Controls whether a players' timer is reset each time they spa
+    # the chat.
+    # Default: true
+    spam_timer_reset: true
+    
+  #
+  # Warning Punishments #
+  #
+  punishment:
+    
+    # the warning system can auto-enact certain actions based on the number
+    # of allocated warnings a person has, if enabled. By default, the player
+    # can have an infinite amount of warnings with the server staff handling
+    # any punishments.
+    enabled: false
+    
+    # This is a list of different actions that can be performed when the limit
+    # of the number of warnings have been reached. These will only happen if the
+    # auto-punishment is enabled. To create a punishment, use a numerical value
+    # for the reached warnings, then add the different descriptive actions to
+    # perform said action. For examples/information, see the 'help.txt' file.
+    action:
+      3:
+        type: KICK
+        time: 1H
+        message: "&cNotice, you have been kicked from the server for reaching %warn_num% warnings. You're kick time is 1 hour."
+      5:
+        type: KICK
+        time: 3H
+        message: "&cNotice, you have been kicked from the server for reaching %warn_num% warnings. You're kicked time is 3 hours."
+      7:
+        type: KICK
+        time: 1D
+        message: "&cNotice, you have been kicked from the server for reaching %warn_num% warnings. You're kicked time is 1 Day."
+      10:
+        type: BAN
+        message: "&cNotice, you have been banned from the server for not complying with the server rules."
+        
+
+##################
+## Staff System ##
+##################  
+staff:
+  
+  # Should the StaffChat be enabled
+  enabled: true
+  
+  # This determines the format of the staffchat.
+  # %dis%    ==  Display Name
+  # %name%   ==  Player Name
+  # %msg%	 ==  Message / Mail
+  format: "&7[&cStaffchat] &6%dis%&r: %msg%"

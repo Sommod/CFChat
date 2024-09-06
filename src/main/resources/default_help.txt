@@ -1,0 +1,184 @@
+This file is auto-generated to provide a list of helpful details about the plugin. Within this file will contain
+all the commands and permissions of the plugin. To view each commands shortcut keys as well as detailed information
+about each command, use the 'help' command in-game.
+
+
+=================================================================================================
+				_________                                           .___      
+				\_   ___ \  ____   _____   _____ _____    ____    __| _/______
+				/    \  \/ /  _ \ /     \ /     \\__  \  /    \  / __ |/  ___/
+				\     \___(  <_> )  Y Y  \  Y Y  \/ __ \|   |  \/ /_/ |\___ \ 
+ 	 			 \______  /\____/|__|_|  /__|_|  (____  /___|  /\____ /____  >
+	        			\/             \/      \/     \/     \/      \/    \/
+=================================================================================================
+< >   - Required portion of command
+[ ]   - Optional portion of command
+[< >] - Optional portion of command, but required if used
+
+/chat - Basic Commands, shows version information
+/chat help [command] - shows list of commands, or command info
+/chat ignore [player] - allows ignoring chat or igoring a player
+/chat message <player> <message> - sends a message to the given player
+/chat mail [<player> <mail>] - sends mail to the given player, or opens self mail
+/chat clear [player | self] [-s] - Clears chat or self, player or all
+/chat log <mail | message | commands> <player> - shows the log the player
+/chat log clear [player] - clears a players log or own log
+
+/chat admin help [command] - shows list of commands or command info
+/chat admin lock [time] - Mutes the chat server, not allowing anyone to talk (lest perm given)
+/chat admin unlock - unmutes server chatw
+/chat admin mute <player> [time] - Mutes a player (can specify time)
+/chat admin unmute <player> - Unmutes a player
+/chat admin reload - reloads the plugin
+/chat admin spy [player] - allows seeing player commands
+/chat admin load <player> - reloads player data from their player config
+/chat admin blacklist help [command] - shows help command
+/chat admin blacklist list - lists all blacklisted words
+/chat admin blacklist add <word> - adds a word to the blacklist
+/chat admin blacklist remove <word> - removes word from blacklist
+/chat admin blacklist group <T/F> - sets whether the filter applies to group chat
+/chat admin blacklist staff <T/F> - sets wether the filter applies to the staff chat
+/chat admin blacklist filter <stop/hide> - sets how the filter will handle the player chat
+
+
+
+/group - shows current group(s) player is in
+/group help [command] - shows list of commands or command info
+/group <group> - sets current group to given group, or enters / exits group chat
+/group list [self] - lists all groups (not hidden) or lists all groups currently apart of
+/group join <group> - joins the group given, or accepts an invite
+/group help [command] - Shows list of commands, or command info
+/group create <name> - creates a new group with the given name
+/group leave [name] - leaves a group, or currently selected group
+/group invite <player> [group] - invites player to group
+/group cancel <player> [group] - cancels an invite for the player
+/group kick <player> - kicks player from group
+/group ban <player> - bans player from group
+/group unban <player> - unbans player from group
+/group mute <player> [time] - mutes player in group (can give minutes)
+/group promote <player> - can promote player to next level (used for owner transfership)
+/group demote <player> - demotes player
+/group message <message> - send message to all players in group
+/group mail clear
+/group mail [mail] - send mail to all players, or opens main
+/group listplayers [group] - lists all players in group, or specified group
+/group log [start] [end] - Shows the group log
+/group log clear - clears the log
+
+/group option perm <player> <perm> - Will add/remove permission to player
+/group option perm <player> list - lists all players permissions
+/group option ignore <T/F> - Sets whether the group can ignore main chat (Must have group selected to work)
+/group option maxplayers <value> - Sets the amount of players that can join
+/group option open <T/F> - Sets whether the group is invite only or publicly open
+/group option name <value> - sets the new name of the group
+/group option format <format> - Sets the format of the group chat
+/group option reset - resets all options back to default.
+
+/group admin delete <group> - force delete group
+/group admin takeover <group> - force self to become owner, current owner becomes admin
+/group admin group option <group> <option> <value> - force sets the groups option
+							+ ignore, maxplayers, open, name, format
+/group admin hide <group> - hides group from list of groups
+/group admin unhide <group> - unhides group from list of groups
+/group admin list [self] - shows ALL groups, or groups currently in
+/group admin deny <option> - sets whether the groups can change this option
+/group admin allow <option> - sets whether the groups can change this option
+/group admin <group> <command> - force runs command given
+					+ promote, demote, kick, ban, unban, mail, message
+/group admin message <message> - sends message to all groups
+/group admin mail <mail> - sends a mail message to all groups
+/group admin add <group> <player> [rank] - force adds a player into the group, with possible rank (no rank is player by default)
+/group admin remove <group> <player> - force remove a player from a group (alters group accordingly)
+/group admin log <group> [start] [end] - Views the log of a group
+/group admin join <group> [rank] - Force joins a group
+/group admin spy [group] - Allows seeing messages / mail from groups WITHOUT being in it
+/group admin log mail <group> [start] [end] - view a groups mail log
+/group admin log messages <group> [start] [end] - view a groups messages log
+/group admin log log <group> [start] [end] - shows entire group log
+/group admin load <group> - reloads the group data from the Config
+
+
+
+/staff - Switches between staffchat and normal chat
+/staff message <message> - sends a message through staff chat
+/staff mail [mail] - sends a mail message through staff chat
+/staff format <format> - sets the staffchat format
+
+
+/warn - shows command description
+/warn help [command] - shows list of commands or command info
+/warn <player> [reason] - gives a player a warning
+/warn clear <player> - clears a players warnings
+/warn remove <player> <warning> - removes a warning from a players history
+/warn log - shows a log of the warning system / commands
+/warn log clear - clears the log
+/warn history <player> - list a players warnings
+
+
+==========================================================================================================
+				__________                     .__              .__                      
+				\______   \ ___________  _____ |__| ______ _____|__| ____   ____   ______
+ 				|     ___// __ \_  __ \/     \|  |/  ___//  ___/  |/  _ \ /    \ /  ___/
+ 				|    |   \  ___/|  | \/  Y Y  \  |\___ \ \___ \|  (  <_> )   |  \\___ \ 
+ 				|____|    \___  >__|  |__|_|  /__/____  >____  >__|\____/|___|  /____  >
+               				  \/            \/        \/     \/               \/     \/
+               				  
+===========================================================================================================
+
+cfchat.* 				- op permission for all
+
+cfchat.chat.* 			- all CHAT permissions
+cfchat.reload 			- can reload the plugin
+cfchat.ignore 			- allow ignoring players
+cfchat.ignore.server 	- allow ignoring the main server
+cfchat.exempt 			- overrides ignore option
+cfchat.force 			- allow forcing command-line over GUI
+cfchat.message 			- allows sending message to player
+cfchat.mail				- allow sending mail to player (default can view mail)
+cfchat.mailall 			- can mail all players of server
+cfchat.log.mail			- can view a players mail log
+cfchat.log.message 		- can view a players message log
+cfchat.log.clear 		- can clear a players log
+cfchat.clear 			- allow clearing OWN chat
+cfchat.clear.server 	- allow clearing server chat
+cfchat.clear.other 		- can clear other players chat
+cfchat.clear.exempt 	- prevent chat from being cleared (still works if self clear, server clear from self)
+cfchat.lock 			- locks the server chat
+cfchat.unlock 			- allows unlocking server chat
+cfchat.mute 			- mute/unmute a player
+cfchat.spy 				- allows seeing players commands
+cfchat.itemdisplay 		- allows showing item in-hand, in-game
+cfchat.blacklist.* 		- all blacklist permissions
+cfchat.blacklist.add 	- can add a blacklist word
+cfchat.blacklist.remove - can remove a blacklist word
+cfchat.blacklist.option - can alter the blacklist options
+cfchat.blacklist.filter - can turn on/off filter
+cfchat.blacklist.exempt - ignores blacklist filter
+cfchat.spamexempt 		- Makes one exempt from the Spam-chat handler
+
+cfgroup.* 				- all group permissions
+cfgroup.use 			- all basic group permissions (no admin perms)
+cfgroup.delete 			- force delete a group
+cfgroup.takeover 		- force take a group (making owner, ignores group limit)
+cfgroup.config 			- sets what options groups can alter
+cfgroup.hide 			- can hide a group from the list
+cfgroup.unhide 			- can unhide a group from the list
+cfgroup.option 			- force set a groups option(s)
+cfgroup.runcom 			- force run a group command
+cfgroup.message 		- can message all groups
+cfgroup.mail 			- can mail all groups
+cfgroup.add 			- force add player (alters maxplayers accordingly, alters ranks accordingly)
+cfgroup.remove 			- force remove player (alters maxplayers accordingly, alters ranks accordingly)
+cfgroup.log 			- can view logs of groups
+cfgroup.join 			- force join a group
+cfgroup.spy 			- can spy on groups
+
+cfstaff.use 			- can use the staff chat
+cfstaff.format 			- can alter the staffchat format
+
+cfwarn.* 				- all warn-system permissions
+cfwarn.use 				- can use the warning system
+cfwarn.clear 			- can clear a players warnings
+cfwarn.exempt 			- ignore warning system
+cfwarn.log 				- can view log of warning
+cfwarn.log.clear 		- can clear warning log

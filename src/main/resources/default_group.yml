@@ -1,0 +1,31 @@
+############################
+####	Group Config	####
+############################
+
+# Note: To have any changes done within this file take affect, you must reload the group data
+# by use the command: '/group admin load <group>'. If you don't then any changes WILL BE LOST.
+
+# Below are the different options that can be altered and edited.
+# |owner| . . . . This is the current owner of the group. A group MUST have an owner, no owner will BREAK the plugin.
+# |admins|  . . . List of players that are admins within the group.
+# |members| . . . List of players that are members within the group.
+# |spies| . . . . List of players that are watching the group chat (but not apart of the group).
+#
+# |name|  . . . . Name of the group. This MUST be unique, no two groups can have the same name!
+# |max| . . . . . Max number of players allowed within the group.
+# |ignore|  . . . Determines if this group can ignore the normal chat.
+# |public|  . . . Sets if anyone can join the group or requires invite.
+# |format|  . . . Sets the format of the group chat.
+# . . . . . . %dis% (Display Name) | %name% (Player Name) | %rank% (group rank) | %msg% (message)
+# |mail|  . . . . List of Group mail.
+owner: ''
+admins: []
+members: []
+spies: []
+options:
+  name: ''
+  max: 0
+  ignore: false
+  public: false
+  format: ''
+mail: []

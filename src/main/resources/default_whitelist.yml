@@ -1,0 +1,18 @@
+# List of whitelisted words. These words will overrule the filter and
+# be allowed to be said within the chat. Note that if a word exists
+# within both the blacklist and whitelist, then the whitelisted word
+# will take priority, meaning the word will NOT be caught by the filter.
+
+whitelist:
+  - assure
+  - assume
+  - assumption
+  - ask
+  - consume
+  - cook
+  - duck
+  - luck
+  - muck
+  - puck
+  - sick
+  - suck

@@ -1,0 +1,23 @@
+# This file is where you can put messages that'll appear in-game for announcements
+# and advertisement. There are several options to when and where the messages can
+# appear. Three options are available for where the message will be sent; CHAT, ACTIONBAR, SCREEN.
+#
+# By default, the announcements are turned off. This setting can be found within the
+# 'config.yml' file for this plugin. To add configuration, all announcements have the option
+# to not be sent to players who possess specific permission(s). Each announcement can contain
+# a list of all permissions that can be counted as having exempt from being sent the announcement.
+
+1:
+  loc: CHAT
+  time: 30M
+  message:
+    - "&aThanks for joining the server today!"
+    - "&aDon't forget to support us to continue this server."
+2:
+  loc: ACTIONBAR
+  time: 1H
+  message: "&aThanks for your continued support!"
+  #exempt:
+  #  - cfchat.*
+  #  - bukkit.op
+  #  - any.plugin.permission
