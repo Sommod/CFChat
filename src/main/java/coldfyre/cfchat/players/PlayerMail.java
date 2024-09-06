@@ -17,7 +17,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
  * @version 1.0
  *
  */
-public class Mail {
+public class PlayerMail {
 
 	private int id;
 	private long timeStamp;
@@ -28,7 +28,7 @@ public class Mail {
 	private String message;
 	
 	// Used just for the Static Method 'loadFromConfig'
-	private Mail() { }
+	private PlayerMail() { }
 	
 	/**
 	 * This creates a new mail object from the given parameters. Several of the other details (such as the time stamp) are
@@ -39,7 +39,7 @@ public class Mail {
 	 * @param sender
 	 * @param message
 	 */
-	public Mail(int id, OfflinePlayer sender, String message) {
+	public PlayerMail(int id, OfflinePlayer sender, String message) {
 		this.id = id;
 		this.sender = sender;
 		senderID = senderID == null ? null : sender.getUniqueId();
@@ -57,10 +57,10 @@ public class Mail {
 	 * @param id - ID of the mail
 	 * @param config - YamlConfiguration of the player data file
 	 * @param path - path of the mail data
-	 * @return {@link Mail} object of the mail data
+	 * @return {@link PlayerMail} object of the mail data
 	 */
-	public static Mail loadFromConfig(int id, YamlConfiguration config, String path) {
-		Mail m = new Mail();
+	public static PlayerMail loadFromConfig(int id, YamlConfiguration config, String path) {
+		PlayerMail m = new PlayerMail();
 		
 		m.id = id;
 		m.senderID = config.getStringList(PATH(path, id) + ".name").get(0).equalsIgnoreCase("console") ? null :
