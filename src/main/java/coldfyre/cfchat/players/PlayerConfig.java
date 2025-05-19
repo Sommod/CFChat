@@ -36,7 +36,7 @@ public class PlayerConfig {
 	private List<Warning> warnings;
 	
 	/**
-	 * Creates a new PLayerConfig file for the player with their file. The file is
+	 * Creates a new PlayerConfig file for the player with their file. The file is
 	 * then skimmed through, collecting and converting the information into memory
 	 * for faster and easier access.
 	 * 

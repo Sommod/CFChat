@@ -50,7 +50,7 @@ public class ConfigMain extends AbstractConfig {
 	public int getGroupOptionPlayers() { return bukkitConfig[0].getInt("group.options.players.default"); }
 	public int getGroupOptionMaxPlayers() { return bukkitConfig[0].getInt("group.options.players.max_players"); }
 	public boolean isGroupOptionIgnore() { return bukkitConfig[0].getBoolean("group.options.ignore.default"); }
-	public boolean isGroupOptionIngoreEditable() { return bukkitConfig[0].getBoolean("group.options.ignore.allow_edit"); }
+	public boolean isGroupOptionIgnoreEditable() { return bukkitConfig[0].getBoolean("group.options.ignore.allow_edit"); }
 	public String getGroupOptionFormat() { return bukkitConfig[0].getString("group.options.format"); }
 	public boolean isWarnSystemEnabled() { return bukkitConfig[0].getBoolean("warn.enabled"); }
 	public boolean isAutoWarnEnabled() { return bukkitConfig[0].getBoolean("warn.enable_auto"); }

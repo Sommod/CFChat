@@ -43,7 +43,7 @@ public class ConfigAlternateFilter extends AbstractConfig {
 			String line;
 			
 			while((line = reader.readLine()) != null)
-				allWords.add(line);
+				ret.add(line);
 			
 		} catch (IOException e) {
 			FilesManager.LogException(e);

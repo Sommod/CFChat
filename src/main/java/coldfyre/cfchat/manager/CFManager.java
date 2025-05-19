@@ -29,6 +29,7 @@ public class CFManager extends PluginManager<CFChat> {
 	private FilesManager filesManager;
 	private ConfigManager configManager;
 	private PlayerManager playerManager;
+	private WarnManager warnManager;
 
 	/**
 	 * Creates a new Manager-type object that can be used to store, create and otherwise connect the rest
@@ -73,6 +74,11 @@ public class CFManager extends PluginManager<CFChat> {
 		else
 			playerManager.reload(this);
 		
+		if(warnManager == null)
+			warnManager = new WarnManager(this);
+		else
+			warnManager.reload(this);
+		
 		//TODO: Load Group
 	}
 	
@@ -104,7 +110,10 @@ public class CFManager extends PluginManager<CFChat> {
 	 * 
 	 * @return {@link ConfigManager}
 	 */
-	public ConfigManager getConfigManager() { return configManager;}
+	public ConfigManager getConfigManager() { return configManager; }
+	
+	public PlayerManager getPlayerManager() { return playerManager; }
+	public WarnManager getWarnManager() { return warnManager; }
 
 	/**
 	 * Disable method for shutting down the plugin normally. This is so that

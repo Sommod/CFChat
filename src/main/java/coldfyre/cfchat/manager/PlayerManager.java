@@ -13,6 +13,7 @@ import java.util.UUID;
 
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 import com.coldfyre.api.manager.FilesManager;
 
@@ -30,6 +31,7 @@ import coldfyre.cfchat.players.PlayerConfig;
 public class PlayerManager {
 	
 	private Map<UUID, PlayerConfig> playerData;
+	private Map<UUID, String> playerChat;
 	
 	/**
 	 * Creates a new manager for the Player Data.
@@ -73,6 +75,9 @@ public class PlayerManager {
 	 */
 	public PlayerConfig getPlayerConfig(UUID id) { return playerData.get(id); }
 	
+	public String getPlayerChat(Player player) { return getPlayerChat(player.getUniqueId()); }
+	public String getPlayerChat(UUID id) { return playerChat.get(id); }
+	
 	/**
 	 * Saves ALL player data from within this plugin into their respective files
 	 * within the system.
@@ -108,26 +113,31 @@ public class PlayerManager {
 		else
 			playerData.clear();
 		
+		if(playerChat == null)
+			playerChat = new HashMap<UUID, String>();
+		
 		for(OfflinePlayer allPlayers : manager.getPlugin().getServer().getOfflinePlayers()) {
-			String fileName = allPlayers.getUniqueId().toString() + ".yml";
-			String filesManagerName = "player_" + allPlayers.getUniqueId().toString();
-			YamlConfiguration pConfig;
+			reloadPlayer(allPlayers.getUniqueId(), manager);
 			
-			if(manager.getFilesManager().addFile(filesManagerName, "Player Data/" + fileName)) {
-				loadFirstTimeData(manager.getFilesManager().getFile(filesManagerName), manager.getPlugin().getClass().getResourceAsStream("default_player.yml"));
-				
-				pConfig = YamlConfiguration.loadConfiguration(manager.getFilesManager().getFile(filesManagerName)); 
-				pConfig.set("name", allPlayers.getName());
-				
-				try {
-					pConfig.save(manager.getFilesManager().getFile(filesManagerName));
-				} catch (IOException e) {
-					FilesManager.LogException(manager, e);
-				}
-			} else
-				pConfig = YamlConfiguration.loadConfiguration(manager.getFilesManager().getFile(filesManagerName));
+//			String fileName = allPlayers.getUniqueId().toString() + ".yml";
+//			String filesManagerName = "player_" + allPlayers.getUniqueId().toString();
+//			YamlConfiguration pConfig;
 			
-			playerData.put(allPlayers.getUniqueId(), new PlayerConfig(allPlayers, pConfig));
+//			if(manager.getFilesManager().addFile(filesManagerName, "Player Data/" + fileName)) {
+//				loadFirstTimeData(manager.getFilesManager().getFile(filesManagerName), manager.getPlugin().getClass().getResourceAsStream("default_player.yml"));
+//				
+//				pConfig = YamlConfiguration.loadConfiguration(manager.getFilesManager().getFile(filesManagerName)); 
+//				pConfig.set("name", allPlayers.getName());
+//				
+//				try {
+//					pConfig.save(manager.getFilesManager().getFile(filesManagerName));
+//				} catch (IOException e) {
+//					FilesManager.LogException(manager, e);
+//				}
+//			} else
+//				pConfig = YamlConfiguration.loadConfiguration(manager.getFilesManager().getFile(filesManagerName));
+//			
+//			playerData.put(allPlayers.getUniqueId(), new PlayerConfig(allPlayers, pConfig));
 		}
 	}
 	

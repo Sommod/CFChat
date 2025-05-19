@@ -99,7 +99,7 @@ public class PlayerLog {
 		Date use = new Date();
 
 		for(String s : logger.get(type)) {
-			use.setTime(Long.parseLong(s.split("§")[1]));
+			use.setTime(Long.parseLong(s.split("§")[0]));
 			
 			if(use.after(first ? from : to) && use.before(first ? to : from))
 				values.add("[" + s.split("§")[1] + "] " + s.split("§")[2].replaceAll("_CFUNIQUE_", "§"));

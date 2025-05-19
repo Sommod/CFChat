@@ -31,7 +31,7 @@ chat:
     
     # Should the display of an item be enabled. Disable this if you have a different plugin
     # to handle displaying items through the chat.
-    enabled: true
+    enabled: false
     
     # When an item is to be displayed in the chat, how should the format below be replaced.
     # |NAME|    ==  This will replace the format below with the name of the item.
@@ -124,8 +124,10 @@ chat:
     # to keep this off unless you have the resources to spare.
     #
     # The logger will keep a log (hence, logger) of the players chat. Three options are
-    # available to keep record of: Mail, Chat, and Commands. Each of these details wil
-    # be stored within the player config file.
+    # available to keep record of: Mail, Chat, and Commands. Each of these details will
+    # be stored within the player config file. This option needs to be ENABLED to have
+    # any of the loggers below work. This is the overhead config option to disable all
+    # loggers.
     enabled: false
     
     # Default: false

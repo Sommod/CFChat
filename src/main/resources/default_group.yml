@@ -30,4 +30,4 @@ options:
   ignore: false
   public: false
   format: ''
-mail: []
+log: []

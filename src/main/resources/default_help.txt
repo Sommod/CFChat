@@ -20,7 +20,7 @@ about each command, use the 'help' command in-game.
 /chat ignore [player] - allows ignoring chat or igoring a player
 /chat message <player> <message> - sends a message to the given player
 /chat mail [<player> <mail>] - sends mail to the given player, or opens self mail
-/chat clear [player | self] [-s] - Clears chat or self, player or all
+/chat clear [player | self] [-s] - Clears chat or self, player or all (Can be silent)
 /chat log <mail | message | commands> <player> - shows the log the player
 /chat log clear [player] - clears a players log or own log
 
@@ -44,7 +44,7 @@ about each command, use the 'help' command in-game.
 
 /group - shows current group(s) player is in
 /group help [command] - shows list of commands or command info
-/group <group> - sets current group to given group, or enters / exits group chat
+/group <group> - Enters or Exits group chat (Switch between normal and group chat)
 /group list [self] - lists all groups (not hidden) or lists all groups currently apart of
 /group join <group> - joins the group given, or accepts an invite
 /group help [command] - Shows list of commands, or command info
@@ -58,8 +58,8 @@ about each command, use the 'help' command in-game.
 /group mute <player> [time] - mutes player in group (can give minutes)
 /group promote <player> - can promote player to next level (used for owner transfership)
 /group demote <player> - demotes player
-/group message <message> - send message to all players in group
-/group mail clear
+/group message <message> - send message to all players in group without having to be in group chat
+/group mail clear - Clears YOUR mail inbox of group mail
 /group mail [mail] - send mail to all players, or opens main
 /group listplayers [group] - lists all players in group, or specified group
 /group log [start] [end] - Shows the group log
