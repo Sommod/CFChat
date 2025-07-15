@@ -75,8 +75,8 @@ public class PlayerManager {
 	 */
 	public PlayerConfig getPlayerConfig(UUID id) { return playerData.get(id); }
 	
-	public String getPlayerChat(Player player) { return getPlayerChat(player.getUniqueId()); }
-	public String getPlayerChat(UUID id) { return playerChat.get(id); }
+	public String getPlayerChatChannel(Player player) { return getPlayerChatChannel(player.getUniqueId()); }
+	public String getPlayerChatChannel(UUID id) { return playerChat.get(id); }
 	
 	/**
 	 * Saves ALL player data from within this plugin into their respective files
