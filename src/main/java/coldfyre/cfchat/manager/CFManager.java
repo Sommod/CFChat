@@ -61,7 +61,7 @@ public class CFManager extends PluginManager<CFChat> {
 		loadDataFiles(filesManager.addFile("blacklist_file", "Config Data/Blacklist.yml"), filesManager.getFile("blacklist_file"), getPlugin().getClass().getResourceAsStream("default_blacklist.yml"));
 		loadDataFiles(filesManager.addFile("whitelist_file", "Config Data/Whitelist.yml"), filesManager.getFile("whitelist_file"), getPlugin().getClass().getResourceAsStream("default_whitelist.yml"));
 		loadDataFiles(filesManager.addFile("data_file", "Config Data/Data.yml"), filesManager.getFile("data_file"), getPlugin().getClass().getResourceAsStream("default_data.yml"));
-		loadDataFiles(filesManager.addFile("alternate_file", "Config Data/Alternate Filter Words.yml"), filesManager.getFile("alternate_file"), getPlugin().getClass().getResourceAsStream("default_words.yml"));
+		loadDataFiles(filesManager.addFile("alternate_file", "Config Data/Alternate Filter Words.yml"), filesManager.getFile("alternate_file"), getPlugin().getClass().getResourceAsStream("default_alt_filter.yml"));
 		loadDataFiles(filesManager.addFile("help_file", "Help.txt"), filesManager.getFile("help_file"), getPlugin().getClass().getResourceAsStream("default_help.txt"));
 		
 		if(configManager == null)
